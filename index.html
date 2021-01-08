@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+    integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
+    crossorigin="anonymous" />
+  <link rel="stylesheet" href="css/font-awesome.css">
+  <link rel="stylesheet" href="style.css">
+  <title>Frontend Mentor | Todo app</title>
+
+
+  <style>
+    .attribution {
+      font-size: 11px;
+      text-align: center;
+      padding: 0 0 1rem;
+    }
+
+    .attribution a {
+      color: hsl(228, 45%, 44%);
+    }
+  </style>
+</head>
+
+<body>
+    <div class="header">
+        <div class="header__desktop--bg"></div>
+        <div class="header__mobile--bg"></div>
+    </div>
+    <div class="container">
+      <div class="switch">
+        <h1 class="switch__h1">TODO</h1>
+        <button class="switch__btn" aria-label="toggle light and dark mode"><img src="images/icon-sun.svg"
+            alt="sun icon" class="switch__icon switch__icon--dark" aria-hidden="false"><img src="images/icon-moon.svg"
+            alt="sun icon" class="switch__icon switch__icon--light" aria-hidden="true"></button>
+      </div>
+      <div class="create-todo transition">
+        <div class="create-todo__div"></div>
+        <input type="text" class="create-todo__input" placeholder="Create a new todo..." onfocus="this.placeholder = ''"
+          onblur="this.placeholder = 'Create a new todo...'">
+      </div>
+      <div class="list-todo">
+        <ul class="list-todo__ul">
+          <!-- here are list items being placed-->
+          <li class="list-todo__li list-todo__li--last-child">
+            <p>Items left: <span id="items-left">0</span></p>
+            <div class="list-todo__filters">
+              <button class="filter-todo__btn filter-todo__btn-all JS-filter font-active"><p class="filter-todo__p">All</p></button>
+              <button class="filter-todo__btn filter-todo__btn-active JS-filter"><p class="filter-todo__p">Active</p></button>
+              <button class="filter-todo__btn filter-todo__btn-complete JS-filter"><p class="filter-todo__p">Completed</p></button>
+            </div>
+            <button class="list-todo__btn-clear"><p class="list-todo__p--font">Clear Completed</p></button>
+          </li>
+        </ul>
+      </div>
+      <div class="filter-todo">
+        <button class="filter-todo__btn filter-todo__btn-all JS-filter font-active"><p class="filter-todo__p">All</p></button>
+        <button class="filter-todo__btn filter-todo__btn-active JS-filter"><p class="filter-todo__p">Active</p></button>
+        <button class="filter-todo__btn filter-todo__btn-complete JS-filter"><p class="filter-todo__p">Completed</p></button>
+      </div>
+      <p class="bottom-text">Drag and drop to reorder list</p>
+    </div>
+
+
+    <div class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+      Coded by <a href="#">vytkuklys</a>.
+    </div>
+    <script src="app.js"></script>
+</body>
+
+</html>
