@@ -173,12 +173,6 @@ body {
     cursor: pointer;
 }
 
-.list-todo__img-complete {
-    width: 100%;
-    height: 100%;
-    opacity: 0;
-}
-
 .list-todo__p {
     font-size: 1rem;
     font-weight: 700;
