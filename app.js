@@ -52,13 +52,13 @@ if (data) {
                 task = "Complete online JavaScript course";
                 break;
         }
-        if(id == 5){
+        if (id == 5) {
             LIST.push({
                 name: task,
                 id: id,
                 completed: true
             });
-        }else{
+        } else {
             LIST.push({
                 name: task,
                 id: id,
@@ -85,12 +85,13 @@ refreshEventListeners();
 /*click event to run delete or complete function*/
 listTodo.addEventListener("click", (event) => {
     /*if statement below prevents an error when clicked on elements without job attribute*/
-    if (event.target.attributes.job) {
+    if (event.target.attributes.class) {
         const element = event.target;
-        const elementJob = event.target.attributes.job.value;
-        if (elementJob == "complete") {
-            completeTodo(element.parentNode);
-        } else if (elementJob == "delete") {
+        let elementClass = event.target.attributes.class.value;
+        elementClass = elementClass.split(' ');
+        if (elementClass[0] == "complete") {
+            completeTodo(element);
+        } else if (elementClass[0] == "delete") {
             deleteTodo(element);
         }
     }
@@ -229,8 +230,8 @@ function createTodo(todo, id, completed) {
     let line = completed ? LINE_THROUGH : "";
     let todoItem =
         `
-    <li class="list-todo__li draggable mouseover" draggable="true"><div class="list-todo__div ${complete}" id="${id}"><img src="data:," alt="" job="complete" class="list-todo__img-complete"></div>
-        <p class="list-todo__p ${line}">${todo}</p><img src="images/icon-cross.svg" alt="cross icon" class="list-todo__img ${id}" job="delete">
+    <li class="list-todo__li draggable mouseover" draggable="true"><div class="complete list-todo__div ${complete}" id="${id}"></div>
+        <p class="list-todo__p ${line}">${todo}</p><img src="images/icon-cross.svg" alt="cross icon" class="delete list-todo__img ${id}">
     </li>
     `
     listTodo.insertAdjacentHTML("afterbegin", todoItem);
@@ -272,7 +273,7 @@ function refreshList() {
 function deleteTodo(element) {
     element.parentNode.parentNode.removeChild(element.parentNode);
     let indexOfList = element.getAttribute("class");
-    indexOfList = indexOfList.replace(/\D/g,'')
+    indexOfList = indexOfList.replace(/\D/g, '')
     LIST.splice(indexOfList, 1)
     for (let i = 0; i < LIST.length; i++) {
         LIST[i].id = i;
