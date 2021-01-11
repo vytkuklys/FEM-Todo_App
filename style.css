@@ -200,7 +200,7 @@ body {
 
 .list-todo__span--font {
     font-weight: 700;
-    font-size: 1rem;
+    font-size: .95rem;
     opacity: 0.7;
 }
 
@@ -246,7 +246,7 @@ body {
 .filter-todo__span {
     font-weight: 700;
     padding: 0 0.75rem;
-    font-size: 1rem;
+    font-size: .95rem;
     opacity: 0.75;
     cursor: pointer;
 }
