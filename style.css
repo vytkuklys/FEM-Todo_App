@@ -309,6 +309,9 @@ body {
     .filter-todo {
         display: none;
     }
+    .filter-todo__span {
+        padding: 0 .55rem
+    }
 }
 
 /*--------Js activated styles---------*/
