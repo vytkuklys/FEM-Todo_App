@@ -52,13 +52,13 @@ if (data) {
                 task = "Complete online JavaScript course";
                 break;
         }
-        if (id == 5) {
+        if(id == 5){
             LIST.push({
                 name: task,
                 id: id,
                 completed: true
             });
-        } else {
+        }else{
             LIST.push({
                 name: task,
                 id: id,
@@ -89,7 +89,7 @@ listTodo.addEventListener("click", (event) => {
         const element = event.target;
         const elementJob = event.target.attributes.job.value;
         if (elementJob == "complete") {
-            completeTodo(element);
+            completeTodo(element.parentNode);
         } else if (elementJob == "delete") {
             deleteTodo(element);
         }
@@ -229,8 +229,8 @@ function createTodo(todo, id, completed) {
     let line = completed ? LINE_THROUGH : "";
     let todoItem =
         `
-    <li class="list-todo__li draggable mouseover" draggable="true"><div class="list-todo__div ${complete}" id="${id}" job="complete"></div>
-        <p class="list-todo__p ${line}">${todo}</p><img src="images/icon-cross.svg"alt="cross icon" class="list-todo__img" job="delete" id="${id}">
+    <li class="list-todo__li draggable mouseover" draggable="true"><div class="list-todo__div ${complete}" id="${id}"><img src="data:," alt="" job="complete" class="list-todo__img-complete"></div>
+        <p class="list-todo__p ${line}">${todo}</p><img src="images/icon-cross.svg" alt="cross icon" class="list-todo__img ${id}" job="delete">
     </li>
     `
     listTodo.insertAdjacentHTML("afterbegin", todoItem);
@@ -271,8 +271,9 @@ function refreshList() {
 /*function to delete list items*/
 function deleteTodo(element) {
     element.parentNode.parentNode.removeChild(element.parentNode);
-    /*Element was removed to prevent error that occured after deleting list items and using drag/drop */
-    LIST.splice(element.id, 1)
+    let indexOfList = element.getAttribute("class");
+    indexOfList = indexOfList.replace(/\D/g,'')
+    LIST.splice(indexOfList, 1)
     for (let i = 0; i < LIST.length; i++) {
         LIST[i].id = i;
     }
@@ -318,7 +319,7 @@ function updateDraggableId() {
     i--;
     for (let k = 0; k < listItems.length - 1; k++) {
         listItems[k].childNodes[0].id = i;
-        listItems[k].childNodes[3].id = i;
+        listItems[k].childNodes[3].setAttribute("class", `list-todo__div ${i}`);
         i--;
     }
 }
