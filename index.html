@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xml:lang="en-US" lang="en">
 
 <head>
   <meta charset="UTF-8">
@@ -28,8 +28,9 @@
     </div>
     <div class="create-todo">
       <div class="create-todo__div"></div>
-      <input type="text" class="create-todo__input" placeholder="Create a new todo..." onfocus="this.placeholder = ''"
-        onblur="this.placeholder = 'Create a new todo...'" aria-label="Input field">
+      <input title="Create a new todo..." type="text" name="input-field" class="create-todo__input"
+        placeholder="Create a new todo..." onfocus="this.placeholder = ''"
+        onblur="this.placeholder = 'Create a new todo...'">
     </div>
     <div class="list-todo">
       <ul class="list-todo__ul">
@@ -38,30 +39,30 @@
           <p>Items left: <span id="items-left">0</span></p>
           <div class="list-todo__filters">
             <button class="filter-todo__btn filter-todo__btn-all font-active">
-              <p class="filter-todo__p">All</p>
+              <span class="filter-todo__span">All</span>
             </button>
             <button class="filter-todo__btn filter-todo__btn-active">
-              <p class="filter-todo__p">Active</p>
+              <span class="filter-todo__span">Active</span>
             </button>
             <button class="filter-todo__btn filter-todo__btn-complete">
-              <p class="filter-todo__p">Completed</p>
+              <span class="filter-todo__span">Completed</span>
             </button>
           </div>
           <button class="list-todo__btn-clear">
-            <p class="list-todo__p--font">Clear Completed</p>
+            <span class="list-todo__span--font">Clear Completed</span>
           </button>
         </li>
       </ul>
     </div>
     <div class="filter-todo">
       <button class="filter-todo__btn filter-todo__btn-all font-active">
-        <p class="filter-todo__p">All</p>
+        <span class="filter-todo__span">All</span>
       </button>
       <button class="filter-todo__btn filter-todo__btn-active">
-        <p class="filter-todo__p">Active</p>
+        <span class="filter-todo__span">Active</span>
       </button>
       <button class="filter-todo__btn filter-todo__btn-complete">
-        <p class="filter-todo__p">Completed</p>
+        <span class="filter-todo__span">Completed</span>
       </button>
     </div>
     <p class="bottom-text">Drag and drop to reorder list</p>
