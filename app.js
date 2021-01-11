@@ -31,7 +31,7 @@ if (data) {
 } else {
     LIST = [];
     id = 0;
-    while (id < 4) {
+    while (id < 6) {
         switch (id) {
             case 0:
                 task = "Show gratitude";
@@ -45,12 +45,26 @@ if (data) {
             case 3:
                 task = "Sleep for solid 8 hours straight";
                 break;
+            case 4:
+                task = "Read for 1 hour";
+                break;
+            case 5:
+                task = "Complete online JavaScript course";
+                break;
         }
-        LIST.push({
-            name: task,
-            id: id,
-            completed: false
-        });
+        if (id == 5) {
+            LIST.push({
+                name: task,
+                id: id,
+                completed: true
+            });
+        } else {
+            LIST.push({
+                name: task,
+                id: id,
+                completed: false
+            });
+        }
         id++;
     }
     loadList(LIST);
