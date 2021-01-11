@@ -276,8 +276,8 @@ body {
     .list-todo__filters {
         display: block;
     }
-
     .list-todo__p {
+        padding: .75rem 1.5rem;
         font-size: 1.1rem;
     }
 
