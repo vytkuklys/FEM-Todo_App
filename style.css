@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap');
 
 * {
     margin: 0;
@@ -377,3 +377,5 @@ body {
 .attribution a {
     color: hsl(228, 45%, 44%);
 }
+ */
+localStorage.clear()
