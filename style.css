@@ -257,7 +257,7 @@ body {
     text-align: center;
     font-weight: 700;
     width: auto;
-    margin: 15% auto;
+    margin: 10% auto;
 }
 
 @media only screen and (min-width: 650px) {
@@ -269,6 +269,20 @@ body {
         display: block;
     }
 
+    .switch {
+        margin-top: 3.5rem;
+    }
+
+    .switch__h1 {
+        font-weight: 700;
+        letter-spacing: 1rem;
+        font-size: 2.5rem;
+    }
+
+    .create-todo {
+        margin-bottom: 1.5rem;
+    }
+
     .container {
         max-width: 35rem;
     }
@@ -276,8 +290,8 @@ body {
     .list-todo__filters {
         display: block;
     }
+
     .list-todo__p {
-        padding: .75rem 1.5rem;
         font-size: 1.1rem;
     }
 
