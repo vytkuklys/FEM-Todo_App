@@ -84,7 +84,6 @@ refreshEventListeners();
 
 /*click event to run delete or complete function*/
 listTodo.addEventListener("click", (event) => {
-    /*if statement below prevents an error when clicked on elements without job attribute*/
     if (event.target.attributes.class) {
         const element = event.target;
         let elementClass = event.target.attributes.class.value;
@@ -179,6 +178,7 @@ input.addEventListener("keyup", () => {
         }
         input.value = "";
         refreshEventListeners();
+        refreshList();
     }
 });
 
