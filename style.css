@@ -387,7 +387,7 @@ body {
 /*Attribution styles*/
 .attribution {
     font-size: 11px;
-    position: fixed;
+    position: static;
     bottom: 1rem;
     left: 50%;
     transform: translateX(-50%);
